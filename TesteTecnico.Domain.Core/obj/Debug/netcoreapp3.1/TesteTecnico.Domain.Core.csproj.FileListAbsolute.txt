@@ -1,0 +1,9 @@
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\bin\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.deps.json
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\bin\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.dll
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\bin\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.pdb
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.csprojAssemblyReference.cache
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.AssemblyInfoInputs.cache
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.AssemblyInfo.cs
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.csproj.CoreCompileInputs.cache
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.dll
+C:\projects\dotz\TesteTecnico\TesteTecnico.Domain.Core\obj\Debug\netcoreapp3.1\TesteTecnico.Domain.Core.pdb
