@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mysql_database:
+    ports:
+      - "3306:3306"
+    container_name: dotz-test-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootdotztest
+      - MYSQL_DATABASE=dotztest
+      - MYSQL_USER=dotztest
+      - MYSQL_PASSWORD=dotztest
+    volumes:
+      - dotz-test-mysql-volume:/var/lib/mysql
+    image: mysql
+    networks:
+      - dotz-test-network
+
+volumes:
+  dotz-test-mysql-volume:
+
+networks:
+  dotz-test-network:
+    driver: bridge
