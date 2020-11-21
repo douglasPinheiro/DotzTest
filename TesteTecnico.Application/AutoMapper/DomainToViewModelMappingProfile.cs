@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TesteTecnico.Application.ViewModels.Address;
 using TesteTecnico.Application.ViewModels.User;
 using TesteTecnico.Domain.Entities;
 
@@ -9,6 +10,7 @@ namespace TesteTecnico.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<User, SignupViewModel>().ForMember(d => d.Password, opt => opt.Ignore());
+            CreateMap<Address, CreateOrEditAddressViewModel>();
         }
     }
 }

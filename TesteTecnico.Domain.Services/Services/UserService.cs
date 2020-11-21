@@ -26,7 +26,10 @@ namespace TesteTecnico.Domain.Services.Services
             _unitOfWork.Adresses.Add(address);
 
             if(user.Address != null && user.Address.Id > 0)
+            {
                 user.Address.IsActive = false;
+                user.Address.UpdatedAt = DateTime.Now;
+            }
 
             user.Address = address;
             _unitOfWork.SaveChanges();

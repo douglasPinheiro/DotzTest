@@ -66,11 +66,11 @@ namespace TesteTecnico.Api.Controllers
 
         [Authorize]
         [HttpPut("Endereco")]
-        public IActionResult CreateOrEditAddress(CreateOrEditAddressViewModel input)
+        public async Task<IActionResult> CreateOrEditAddress(CreateOrEditAddressViewModel input)
         {
             string userEmail = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            _userApplicationService.CreateOrEditAddress(userEmail, input);
-            return Ok();
+            var result = await _userApplicationService.CreateOrEditAddress(userEmail, input);
+            return Ok(result);
         }
     }
 }
