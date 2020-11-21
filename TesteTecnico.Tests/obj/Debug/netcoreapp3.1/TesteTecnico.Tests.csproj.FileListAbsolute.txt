@@ -1,8 +1,0 @@
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\bin\Debug\netcoreapp3.1\TesteTecnico.Tests.deps.json
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\bin\Debug\netcoreapp3.1\TesteTecnico.Tests.dll
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\bin\Debug\netcoreapp3.1\TesteTecnico.Tests.pdb
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\obj\Debug\netcoreapp3.1\TesteTecnico.Tests.AssemblyInfoInputs.cache
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\obj\Debug\netcoreapp3.1\TesteTecnico.Tests.AssemblyInfo.cs
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\obj\Debug\netcoreapp3.1\TesteTecnico.Tests.csproj.CoreCompileInputs.cache
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\obj\Debug\netcoreapp3.1\TesteTecnico.Tests.dll
-C:\projects\dotz\TesteTecnico\TesteTecnico.Tests\obj\Debug\netcoreapp3.1\TesteTecnico.Tests.pdb
