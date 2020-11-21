@@ -25,14 +25,11 @@ namespace TesteTecnico.Application.Services
 
         public string GenerateToken(User user)
         {
-            IdentityOptions _options = new IdentityOptions();
-
-            var claims = new List<Claim> {
+            var claims = new[] {
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(_options.ClaimsIdentity.UserIdClaimType, user.Id),
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            };
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+              };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["jwt:key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -41,7 +38,7 @@ namespace TesteTecnico.Application.Services
               issuer: _configuration["jwt:issuer"],
               audience: _configuration["jwt:issuer"],
               claims: claims,
-              expires: DateTime.Now.AddDays(1),
+              expires: DateTime.Now.AddMinutes(30),
               signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);

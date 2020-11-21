@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TesteTecnico.Domain.Core.Interfaces;
 using TesteTecnico.Domain.Core.Services;
 using TesteTecnico.Domain.Entities;
 
@@ -10,10 +11,27 @@ namespace TesteTecnico.Domain.Services.Services
     public class UserService : IUserService
     {
         private readonly UserManager<User> _userManager;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(UserManager<User> userManager)
+        public UserService(UserManager<User> userManager,
+            IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
+            _unitOfWork = unitOfWork;
+        }
+
+        public User CreateOrEditAddress(User user, Address address)
+        {
+            address.CreatedAt = DateTime.Now;
+            _unitOfWork.Adresses.Add(address);
+
+            if(user.Address != null && user.Address.Id > 0)
+                user.Address.IsActive = false;
+
+            user.Address = address;
+            _unitOfWork.SaveChanges();
+
+            return user;
         }
 
         public async Task<User> CreateUser(User user, string password)

@@ -13,6 +13,7 @@ namespace TesteTecnico.Api.Configurations
       
             services.AddDbContext<ApplicationDbContext>(options =>
             {
+                options.UseLazyLoadingProxies();
                 options.UseMySql(connectionString, x => x.MigrationsAssembly("TesteTecnico.Infra.Data"));
             });
         }

@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TesteTecnico.Application.Interfaces;
+using TesteTecnico.Application.ViewModels.Address;
 using TesteTecnico.Application.ViewModels.User;
 using TesteTecnico.Domain.Core.Services;
 
@@ -12,18 +16,22 @@ namespace TesteTecnico.Api.Controllers
     {
         private readonly IUserService _userService;
         private readonly IUserApplicationService _userApplicationService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IJwtTokenService _jwtTokenService;
 
         public UserController(
             IUserService userService,
             IUserApplicationService userApplicationService,
+            IHttpContextAccessor httpContextAccessor,
             IJwtTokenService jwtTokenService)
         {
             _userService = userService;
             _userApplicationService = userApplicationService;
+            _httpContextAccessor = httpContextAccessor;
             _jwtTokenService = jwtTokenService;
         }
 
+        [AllowAnonymous]
         [HttpPost("Create")]
         public async Task<ActionResult<SignupViewModel>> Create(SignupViewModel input)
         {
@@ -36,6 +44,7 @@ namespace TesteTecnico.Api.Controllers
             return await _userApplicationService.CreateUser(input);
         }
 
+        [AllowAnonymous]
         [HttpPost("Login")]
         public async Task<IActionResult> Login(SigninViewModel input)
         {
@@ -53,6 +62,16 @@ namespace TesteTecnico.Api.Controllers
             string token = _jwtTokenService.GenerateToken(user);
 
             return Ok(new { token });
+        }
+
+        [Authorize]
+        [HttpPut("Endereco")]
+        public IActionResult CreateOrEditAddress(CreateOrEditAddressViewModel input)
+        {
+            string userEmail = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _userApplicationService.CreateOrEditAddress(userEmail, input);
+
+            return Ok();
         }
     }
 }

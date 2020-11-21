@@ -10,5 +10,7 @@ namespace TesteTecnico.Domain.Core.Services
         Task<User> GetUserByEmail(string email);
 
         Task<User> CreateUser(User user, string password);
+
+        User CreateOrEditAddress(User user, Address address);
     }
 }
