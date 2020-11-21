@@ -38,7 +38,7 @@ namespace TesteTecnico.Api.Controllers
             var existentUser = await _userService.GetUserByEmail(input.Email);
             if (existentUser != null)
             {
-                return BadRequest("This user Already exists");
+                return BadRequest("Email já cadastrado");
             }
 
             return await _userApplicationService.CreateUser(input);
@@ -57,7 +57,7 @@ namespace TesteTecnico.Api.Controllers
                 return BadRequest(new { error = "", error_description = "Usuario não esta ativo" });
 
             if (!await _userService.DoLogin(user.Email, input.Password))
-                return BadRequest(new { error = "", error_description = "Username ou senha inválida" });
+                return BadRequest(new { error = "", error_description = "Email ou senha inválida" });
 
             string token = _jwtTokenService.GenerateToken(user);
 
@@ -70,7 +70,6 @@ namespace TesteTecnico.Api.Controllers
         {
             string userEmail = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             _userApplicationService.CreateOrEditAddress(userEmail, input);
-
             return Ok();
         }
     }

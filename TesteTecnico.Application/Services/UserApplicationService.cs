@@ -19,13 +19,12 @@ namespace TesteTecnico.Application.Services
             _userService = userService;
         }
 
-        public async Task<User> CreateOrEditAddress(string userEmail, CreateOrEditAddressViewModel viewModel)
+        public async Task<CreateOrEditAddressViewModel> CreateOrEditAddress(string userEmail, CreateOrEditAddressViewModel viewModel)
         {
             var user = await _userService.GetUserByEmail(userEmail);
             var address = _mapper.Map<Address>(viewModel);
             var result = _userService.CreateOrEditAddress(user, address);
-
-            return result;
+            return _mapper.Map<CreateOrEditAddressViewModel>(result.Address);
         }
 
         public async Task<SignupViewModel> CreateUser(SignupViewModel userModel)

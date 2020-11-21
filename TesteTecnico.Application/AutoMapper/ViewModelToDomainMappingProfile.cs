@@ -18,7 +18,8 @@ namespace TesteTecnico.Application.AutoMapper
             CreateMap<CreateOrEditAddressViewModel, Address>()
                 .ForMember(d => d.Id, opt => opt.Ignore())
                 .ForMember(d => d.CreatedAt, opt => opt.Ignore())
-                .ForMember(d => d.UpdatedAt, opt => opt.Ignore());
+                .ForMember(d => d.UpdatedAt, opt => opt.Ignore())
+                .ForMember(d => d.IsActive, opt => opt.Ignore());
         }
 
         private void MapUser()
@@ -36,7 +37,10 @@ namespace TesteTecnico.Application.AutoMapper
                 .ForMember(d => d.LockoutEnabled, opt => opt.Ignore())
                 .ForMember(d => d.AccessFailedCount, opt => opt.Ignore())
                 .ForMember(d => d.UserName, opt => opt.MapFrom(e => e.Email))
-                .ForMember(d => d.PhoneNumberConfirmed, opt => opt.Ignore());
+                .ForMember(d => d.PhoneNumberConfirmed, opt => opt.Ignore())
+                .ForMember(d => d.IsActive, opt => opt.Ignore())
+                .ForMember(d => d.Address, opt => opt.Ignore())
+                .ForMember(d => d.Id, opt => opt.Ignore());
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using TesteTecnico.Application.ViewModels.Address;
 using TesteTecnico.Application.ViewModels.User;
-using TesteTecnico.Domain.Entities;
 
 namespace TesteTecnico.Application.Interfaces
 {
@@ -9,6 +8,6 @@ namespace TesteTecnico.Application.Interfaces
     {
         Task<SignupViewModel> CreateUser(SignupViewModel user);
 
-        Task<User> CreateOrEditAddress(string userId, CreateOrEditAddressViewModel viewModel);
+        Task<CreateOrEditAddressViewModel> CreateOrEditAddress(string userId, CreateOrEditAddressViewModel viewModel);
     }
 }
