@@ -16,6 +16,7 @@ namespace TesteTecnico.Api.Configurations
             services.AddScoped<IJwtTokenService, JwtTokenService>();
             services.AddScoped<IUserApplicationService, UserApplicationService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWalletApplicationService, WalletApplicationService>();
         }
     }
 }

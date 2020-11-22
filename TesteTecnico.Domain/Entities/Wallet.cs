@@ -7,9 +7,10 @@ namespace TesteTecnico.Domain.Entities
         public decimal DotzBalance { get; set; }
 
         public virtual User User { get; set; }
+        public string UserId { get; set; }
 
         public virtual ICollection<Transaction> TransactionsHistory { get; set; }
 
-        public virtual ICollection<Order> DeliveryHistory { get; set; }
+        //public virtual ICollection<Order> DeliveryHistory { get; set; }
     }
 }

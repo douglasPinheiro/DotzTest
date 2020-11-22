@@ -42,6 +42,10 @@ namespace TesteTecnico.Domain.Services.Services
             user.IsActive = true;
             var result = await _userManager.CreateAsync(user, password);
             ThrowExceptionOnError(result);
+            user.Wallet = CreateInitialWallet(user);
+            result = await _userManager.UpdateAsync(user);
+            ThrowExceptionOnError(result);
+
             return user;
         }
 
@@ -54,6 +58,15 @@ namespace TesteTecnico.Domain.Services.Services
         public async Task<User> GetUserByEmail(string email)
         {
             return await _userManager.FindByEmailAsync(email);
+        }
+
+        private Wallet CreateInitialWallet(User user)
+        {
+            var initialWallet = new Wallet() { DotzBalance = 0, User = user };
+            _unitOfWork.Wallets.Add(initialWallet);
+            _unitOfWork.SaveChanges();
+
+            return initialWallet;
         }
 
         private void ThrowExceptionOnError(IdentityResult result)

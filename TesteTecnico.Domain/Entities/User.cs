@@ -17,6 +17,6 @@ namespace TesteTecnico.Domain.Entities
 
         public virtual Address Address { get; set; }
 
-        //public virtual Wallet Wallet { get; set; }
+        public virtual Wallet Wallet { get; set; }
     }
 }

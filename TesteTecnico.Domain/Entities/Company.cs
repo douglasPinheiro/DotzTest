@@ -10,6 +10,6 @@ namespace TesteTecnico.Domain.Entities
 
         public virtual Address Address { get; set; }
 
-        public virtual ICollection<Transaction> TransictionsHistory { get; set; }
+        public virtual ICollection<Transaction> TransactionsHistory { get; set; }
     }
 }
