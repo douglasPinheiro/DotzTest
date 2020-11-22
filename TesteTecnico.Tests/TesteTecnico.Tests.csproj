@@ -16,11 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Domain\" />
-    <Folder Include="Utils\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TesteTecnico.Api\TesteTecnico.Api.csproj" />
     <ProjectReference Include="..\TesteTecnico.Application\TesteTecnico.Application.csproj" />
   </ItemGroup>

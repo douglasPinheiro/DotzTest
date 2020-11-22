@@ -43,6 +43,7 @@ namespace TesteTecnico.Api
             });
 
             MasterUserConfig.ConfigAuthorizationRolesAndMasterUser(app).ConfigureAwait(false).GetAwaiter().GetResult();
+            SeederData.SeedInitialData(app);
         }
     }
 }

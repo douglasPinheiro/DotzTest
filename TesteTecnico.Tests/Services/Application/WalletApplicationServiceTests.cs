@@ -3,7 +3,7 @@ using Moq;
 using System.Threading.Tasks;
 using TesteTecnico.Application.Services;
 using TesteTecnico.Application.ViewModels.Wallet;
-using TesteTecnico.Domain.Core.Services;
+using TesteTecnico.Domain.Core.Interfaces.Services;
 using TesteTecnico.Domain.Entities;
 
 namespace TesteTecnico.Tests.Services.Application

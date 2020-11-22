@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using TesteTecnico.Application.Interfaces;
 using TesteTecnico.Application.ViewModels.Address;
 using TesteTecnico.Application.ViewModels.User;
-using TesteTecnico.Domain.Core.Services;
+using TesteTecnico.Domain.Core.Interfaces.Services;
 using TesteTecnico.Domain.Entities;
 
 namespace TesteTecnico.Application.Services

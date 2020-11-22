@@ -17,8 +17,4 @@
     <ProjectReference Include="..\TesteTecnico.Domain\TesteTecnico.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Seed\" />
-  </ItemGroup>
-
 </Project>

@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using TesteTecnico.Domain.Core.Interfaces;
-using TesteTecnico.Domain.Core.Services;
+using TesteTecnico.Domain.Core.Interfaces.Services;
 using TesteTecnico.Domain.Entities;
 
 namespace TesteTecnico.Domain.Services.Services

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using TesteTecnico.Application.Interfaces;
 using TesteTecnico.Application.ViewModels.Wallet;
-using TesteTecnico.Domain.Core.Services;
+using TesteTecnico.Domain.Core.Interfaces.Services;
 
 namespace TesteTecnico.Application.Services
 {

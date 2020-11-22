@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using TesteTecnico.Domain.Entities;
 
-namespace TesteTecnico.Domain.Core.Services
+namespace TesteTecnico.Domain.Core.Interfaces.Services
 {
     public interface IUserService
     {

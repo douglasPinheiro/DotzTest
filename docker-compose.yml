@@ -1,5 +1,16 @@
 version: "3"
 services:
+  # dotzapi:
+  #   image: dotz-test-api
+  #   build:
+  #     context: .
+  #   ports:
+  #     - "5000:80"
+  #   networks:
+  #     - dotz-test-network
+  #   depends_on:
+  #     - "mysql_database"
+
   mysql_database:
     ports:
       - "3306:3306"

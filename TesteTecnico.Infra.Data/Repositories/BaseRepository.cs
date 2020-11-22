@@ -20,6 +20,11 @@ namespace TesteTecnico.Infra.Data.Repositories
             context.Set<TEntity>().Add(entity);
         }
 
+        public int Count()
+        {
+            return context.Set<TEntity>().Count();
+        }
+
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return context.Set<TEntity>().Where(predicate);
@@ -33,6 +38,11 @@ namespace TesteTecnico.Infra.Data.Repositories
         public TEntity GetById(int Id)
         {
             return context.Set<TEntity>().FirstOrDefault(x => x.Id == Id);
+        }
+
+        public IEnumerable<TEntity> List()
+        {
+            return context.Set<TEntity>();
         }
 
         public void Remove(TEntity entity)

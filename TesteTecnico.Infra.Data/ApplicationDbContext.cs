@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
 using TesteTecnico.Domain.Entities;
 
 namespace TesteTecnico.Infra.Data
@@ -43,6 +42,10 @@ namespace TesteTecnico.Infra.Data
         {
             builder.Entity<Company>()
                 .HasOne(d => d.Address);
+
+            builder.Entity<Company>()
+                .HasMany(d => d.Products)
+                .WithOne(d => d.Company);
         }
 
         private static void MapTransaction(ModelBuilder builder)

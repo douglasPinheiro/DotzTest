@@ -10,6 +10,8 @@ namespace TesteTecnico.Domain.Core.Interfaces.Repositories
         TEntity GetById(int Id);
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> List();
+        int Count();
         void Add(TEntity entity);
         void Remove(TEntity entity);
     }

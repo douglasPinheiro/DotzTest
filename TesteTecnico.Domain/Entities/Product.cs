@@ -11,5 +11,7 @@
         public decimal RewardInDotz { get; set; }
 
         public virtual SubCategory SubCategory { get; set; }
+
+        public virtual Company Company { get; set; }
     }
 }
