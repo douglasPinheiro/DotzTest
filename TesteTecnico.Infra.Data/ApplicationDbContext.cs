@@ -67,10 +67,6 @@ namespace TesteTecnico.Infra.Data
             builder.Entity<Wallet>()
                 .HasMany(d => d.TransactionsHistory)
                 .WithOne(d => d.Wallet);
-
-            //builder.Entity<Wallet>()
-            //    .HasMany(d => d.DeliveryHistory)
-            //    .WithOne(d => d.Wallet);
         }
 
         private static void MapUser(ModelBuilder builder)
