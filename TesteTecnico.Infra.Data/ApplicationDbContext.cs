@@ -18,8 +18,8 @@ namespace TesteTecnico.Infra.Data
             MapCompany(builder);
             MapTransaction(builder);
             MapWallet(builder);
-            //MapCategory(builder);
-            //MapOrder(builder);
+            MapCategory(builder);
+            MapOrder(builder);
             MapUser(builder);
         }
 
@@ -50,6 +50,9 @@ namespace TesteTecnico.Infra.Data
             builder.Entity<Transaction>()
                 .HasOne(d => d.Company)
                 .WithMany(d => d.TransactionsHistory);
+
+            builder.Entity<Transaction>()
+                .HasOne(d => d.Product);
         }
 
         private static void MapWallet(ModelBuilder builder)

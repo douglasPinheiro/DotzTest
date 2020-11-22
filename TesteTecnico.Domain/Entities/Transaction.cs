@@ -6,7 +6,7 @@ namespace TesteTecnico.Domain.Entities
     {
         public decimal DotzCost { get; set; }
 
-        public string ProductOrServiceName { get; set; }
+        public virtual Product Product { get; set; }
 
         public virtual Company Company { get; set; }
 

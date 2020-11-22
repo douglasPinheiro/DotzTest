@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Services\Domain\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 
   <ItemGroup>

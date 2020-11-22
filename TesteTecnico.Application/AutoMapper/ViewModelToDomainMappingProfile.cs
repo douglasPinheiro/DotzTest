@@ -40,6 +40,7 @@ namespace TesteTecnico.Application.AutoMapper
                 .ForMember(d => d.PhoneNumberConfirmed, opt => opt.Ignore())
                 .ForMember(d => d.IsActive, opt => opt.Ignore())
                 .ForMember(d => d.Address, opt => opt.Ignore())
+                .ForMember(d => d.Wallet, opt => opt.Ignore())
                 .ForMember(d => d.Id, opt => opt.Ignore());
         }
     }
