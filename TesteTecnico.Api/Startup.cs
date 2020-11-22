@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TesteTecnico.Api.Configurations;
+using TesteTecnico.Infra.Data;
 
 namespace TesteTecnico.Api
 {
@@ -41,6 +43,14 @@ namespace TesteTecnico.Api
             {
                 endpoints.MapControllers();
             });
+
+            // run migrations
+            using (IServiceScope serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                ApplicationDbContext context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.SetCommandTimeout(300);
+                context.Database.Migrate();
+            }
 
             MasterUserConfig.ConfigAuthorizationRolesAndMasterUser(app).ConfigureAwait(false).GetAwaiter().GetResult();
             SeederData.SeedInitialData(app);
