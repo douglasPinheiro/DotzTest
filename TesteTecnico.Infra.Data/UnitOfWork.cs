@@ -13,6 +13,7 @@ namespace TesteTecnico.Infra.Data
         public IProductRepository Products { get; private set; }
         public ICategoryRepository Categories { get; private set; }
         public ISubCategoryRepository SubCategories { get; private set; }
+        public ITransactionRepository Transactions { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -23,6 +24,7 @@ namespace TesteTecnico.Infra.Data
             Products = new ProductRepository(_context);
             Categories = new CategoryRepository(_context);
             SubCategories = new SubCategoryRepository(_context);
+            Transactions = new TransactionRepository(_context);
         }
 
         public void SaveChanges()

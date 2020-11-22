@@ -20,6 +20,8 @@ namespace TesteTecnico.Api.Configurations
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<ITransactionApplicationService, TransactionApplicationService>();
         }
     }
 }

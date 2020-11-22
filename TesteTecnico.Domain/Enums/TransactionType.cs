@@ -2,7 +2,7 @@
 {
     public enum TransactionType
     {
-        Buy,
-        Exchange
+        Buy = 0,
+        Exchange = 1
     }
 }

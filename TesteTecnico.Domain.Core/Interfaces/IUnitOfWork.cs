@@ -10,6 +10,7 @@ namespace TesteTecnico.Domain.Core.Interfaces
         IProductRepository Products { get; }
         ICategoryRepository Categories { get; }
         ISubCategoryRepository SubCategories { get; }
+        ITransactionRepository Transactions { get; }
         void SaveChanges();
     }
 }

@@ -27,7 +27,7 @@ namespace TesteTecnico.Tests.Services.Application
                 .ReturnsAsync(user)
                 .Verifiable();
 
-            var service = new WalletApplicationService(mockForUserService.Object);
+            var service = new WalletApplicationService(mockForUserService.Object, null);
 
             var result = await service.GetBalance(It.IsAny<string>());
 

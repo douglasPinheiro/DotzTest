@@ -62,7 +62,12 @@ namespace TesteTecnico.Domain.Services.Services
 
         private Wallet CreateInitialWallet(User user)
         {
-            var initialWallet = new Wallet() { DotzBalance = 0, User = user };
+            var initialWallet = new Wallet
+            {
+                DotzBalance = 0,
+                User = user,
+                CreatedAt = DateTime.Now
+            };
             _unitOfWork.Wallets.Add(initialWallet);
             _unitOfWork.SaveChanges();
 
